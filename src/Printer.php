@@ -24,7 +24,6 @@ class Printer extends \PHPUnit\TextUI\DefaultResultPrinter
         'S' => "\e[36mS\e[0m", // cyan S
         '.' => "\e[32m\xe2\x9c\x94\e[0m", // green checkmark
     ];
-    $this->colors = true;
 
     /**
      * Structure of the outputted test row.
