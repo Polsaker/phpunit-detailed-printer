@@ -8,7 +8,7 @@ use PHPUnit\TextUI\ResultPrinter;
 use PHPUnit\Util\Test as UtilTest;
 use PHPUnit\Framework\AssertionFailedError;
 
-class Printer extends ResultPrinter
+class Printer extends \PHPUnit\TextUI\DefaultResultPrinter
 {
     /**
      * Replacement symbols for test statuses.
