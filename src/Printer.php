@@ -200,10 +200,15 @@ class Printer extends \PHPUnit\TextUI\DefaultResultPrinter
     protected function formatTestDuration($time)
     {
         $testDurationInMs = round($time * 1000);
-
-        $duration = $testDurationInMs > 500
-            ? $this->colorizeTextBox('fg-yellow', $testDurationInMs)
-            : $testDurationInMs;
+        if($testDurationInMs > 60000){
+            $duration = $this->colorizeTextBox('fg-white,bg-red', $testDurationInMs);
+        }else if($testDurationInMs > 30000){
+            $duration = $this->colorizeTextBox('fg-red', $testDurationInMs);
+        }else if($testDurationInMs > 500){
+            $duration = $this->colorizeTextBox('fg-yellow', $testDurationInMs);
+        }else{
+            $duration = $testDurationInMs;
+        }
 
         return sprintf('%s ms', $duration);
     }
