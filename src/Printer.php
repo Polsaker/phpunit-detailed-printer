@@ -202,7 +202,7 @@ class Printer extends \PHPUnit\TextUI\DefaultResultPrinter
         $testDurationInMs = round($time * 1000);
         if($testDurationInMs > 60000){
             $duration = $this->colorizeTextBox('fg-white,bg-red', $testDurationInMs);
-        }else if($testDurationInMs > 30000){
+        }else if($testDurationInMs > 20000){
             $duration = $this->colorizeTextBox('fg-red', $testDurationInMs);
         }else if($testDurationInMs > 500){
             $duration = $this->colorizeTextBox('fg-yellow', $testDurationInMs);
